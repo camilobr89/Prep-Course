@@ -183,14 +183,17 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
 
-  var numeroraiz = Math.floor(Math.sqrt(numero)) + 1;
+  if (numero === 0 || numero === 1){
+    return false;
+  }
 
-  for (let i = 2; i < numeroraiz; ++i){
-    if (numero % i == 0){
+  for (i = 2; i < numero; i++){
+    if (numero % i === 0){
       return false;
     }
-  }
-return true;
+  }   
+
+  return true;
 
 }
 
@@ -207,25 +210,42 @@ function esVerdadero(valor){
 
 }
 
-function tablaDelSeis(num){
+function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
+  var tabla6 = [];
 
-  var tabla = [];
+  for (i = 0; i < 11; i++){
+    tabla6.push(i * 6);
+  }
+
+  return tabla6;
   
 }
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
+  var tostring = numero.toString();
+  if (tostring.length === 3){
+    return true;
+  }
+  return false;
 }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+  var num = 1;
+  var suma = numero;
+
+  do {
+    suma = suma + 5;
+    num++;
+  } while (num < 9);
+  return suma;
 }
 
 
